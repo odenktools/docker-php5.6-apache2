@@ -1,0 +1,10 @@
+* text=auto
+*.sh    text eol=lf
+*.bat   text eol=crlf
+*.txt   text
+*.java  text diff=java
+*.xml   text diff=xml
+# Shell scripts require LF
+*.sh    text eol=lf
+# Batch scripts require CRLF
+*.bat   text eol=crlf
