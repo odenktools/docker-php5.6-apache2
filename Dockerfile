@@ -86,9 +86,9 @@ RUN { \
     echo 'always_populate_raw_post_data=-1'; \
     echo 'log_errors=on'; \
     echo 'display_errors=on'; \
-    echo 'upload_max_filesize=32M'; \
-    echo 'post_max_size=32M'; \
-    echo 'memory_limit=512M'; \
+    echo 'upload_max_filesize=1024M'; \
+    echo 'post_max_size=1024M'; \
+    echo 'memory_limit=-1'; \
     echo 'date.timezone=$TZ'; \
   } > /usr/local/etc/php/php.ini
 
@@ -127,10 +127,10 @@ COPY config/apache2/apache2.conf /etc/apache2/apache2.conf
 
 RUN { \
     echo '<VirtualHost *:80>';\
-    	echo 'ServerAdmin odenktools@gmail.com';\
-    	echo 'DocumentRoot /var/www/html';\
-    	echo 'ErrorLog ${APACHE_LOG_DIR}/error.log';\
-    	echo 'CustomLog ${APACHE_LOG_DIR}/access.log combined';\
+    echo 'ServerAdmin odenktools@gmail.com';\
+    echo 'DocumentRoot /var/www/html';\
+    echo 'ErrorLog ${APACHE_LOG_DIR}/error.log';\
+    echo 'CustomLog ${APACHE_LOG_DIR}/access.log combined';\
     echo '</VirtualHost>';\
 } > /etc/apache2/sites-available/000-default.conf
 
